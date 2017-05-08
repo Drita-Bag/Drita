@@ -36,6 +36,11 @@
             <input name="saisie" type="text" placeholder="Recherche..." required />
             <input class="loupe" type="submit" value="" />
         </form>
+        <?php
+            echo $test;
+        ?>
+            
+            
     </div>
 </body>
 		
