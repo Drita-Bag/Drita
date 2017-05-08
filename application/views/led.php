@@ -1,2 +1,2 @@
    <body> 
-      <p><a href='http://localhost/CodeIgniter-3.1.4/'>Accueil</a> -> LED</p>
+      <p><a href='accueil'>Accueil</a> -> LED</p>
