@@ -1,5 +1,5 @@
    <body> 
-      <p><a href='http://localhost/CodeIgniter-3.1.4/'>Accueil</a> -> Musique</p>
+      <p><a href='http://localhost/Drita-Bag/'>Accueil</a> -> Musique</p>
 	  <style>
 		  
 #recherche {
