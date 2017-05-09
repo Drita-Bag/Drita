@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form class="form-horizontal" role="form" method="POST" >
+                <form class="form-horizontal" role="form" method="POST" action="login">
                         <div class="form-group">
 					 
                             <label for="inputEmail3" class="col-sm-2 control-label">
@@ -26,7 +26,7 @@
                                 <div class="checkbox">
 
                                         <label>
-                                                <input type="checkbox" name="RememberMe"> Se souvenir de moi
+                                                <input type="checkbox" name="RememberMe" value="true"> Se souvenir de moi
                                         </label>
                                 </div>
                             </div>

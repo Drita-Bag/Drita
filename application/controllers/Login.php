@@ -1,11 +1,27 @@
 <?php 
    class Login extends CI_Controller {
 	
+        public function __construct() 
+        {
+            parent::__construct();
+            $this->load->model('Login_model');
+            $this->load->helper('url_helper');
+        }
+       
         public function index() { 
 		 
+                if(!$this->Login_model->user_validity())
+                {
                     $this->loadHeader();
                     $this->load->view('login');
                     $this->load->view('templates/footer');
+                }
+                else
+                {
+                    header('accueil');
+                }
+                    
+                
 	  } 
           
         private function loadHeader()
