@@ -6,7 +6,7 @@
         
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo $titre ?></title> 
+        <title><?php echo $titre ?></title>
         <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css"> 
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="../assets/css/style.css" rel="stylesheet">
