@@ -13,7 +13,7 @@ class Accueil extends CI_Controller {
 	private function loadHeader()
 	{
 		$data['header'] = init_header('fr', 'Accueil Drita', 'utf-8');
-		$data['dcterms'] = header_dcterms('DritaTeam', 'DritaHomePage', '2017-05-09');
+		$data['dcterms'] = header_dcterms('Drita', 'connectedBag', '2017-05-09');
 		$data['cssTags'] = array(css('style.css'), css('accueil_style.css'));
 		$data['jsTags'] = array();
 		$data['lessTags'] = array();
