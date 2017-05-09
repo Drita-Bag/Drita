@@ -370,7 +370,7 @@ if ( ! function_exists('css'))
 {
     function css($file, $media='all')
     {
-        return '<link rel="stylesheet" type="text/css" href="' . css_url() . $file . '" media="' . $media . '">'."\n";
+        return '<link rel="stylesheet" type="text/css" href="' . css_url() . $file . '" media="' . $media . '">';
     }
 }
 
@@ -385,7 +385,7 @@ if ( ! function_exists('less'))
 {
     function less($file)
     {
-        return '<link rel="stylesheet/less" type="text/css" href="' . less_url() . $file . '">'."\n";
+        return '<link rel="stylesheet/less" type="text/css" href="' . less_url() . $file . '">';
     }
 }
 
@@ -405,7 +405,7 @@ if ( ! function_exists('js'))
 
 		foreach ( $atts as $key => $val )
 			$element .= ' ' . $key . '="' . $val . '"';
-		$element .= '></script>'."\n";
+		$element .= '></script>';
 
 		return $element;
     }
@@ -443,8 +443,8 @@ if ( ! function_exists('jquery'))
     function jquery($version='')
     {
     	// Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
-  		$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>'."\n";
-  		$out .= '<script>window.jQuery || document.write(\'<script src="'.js_url().'jquery-'.$version.'.min.js"><\/script>\')</script>'."\n";
+  		$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>' . PHP_EOL;
+  		$out .= '<script>window.jQuery || document.write(\'<script src="'.js_url().'jquery-'.$version.'.min.js"><\/script>\')</script>';
         return $out;
     }
 }

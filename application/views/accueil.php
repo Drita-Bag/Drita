@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-		<link rel = "stylesheet" type = "text/css" href = "css/accueil_style.css">
 		<div id="container">
 			<h1>Bienvenue sur le gestionnaire VoCore</h1>
 			<div id="body">
