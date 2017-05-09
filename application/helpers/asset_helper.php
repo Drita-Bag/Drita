@@ -57,7 +57,7 @@ if ( ! function_exists('asset_url'))
         //get an instance of CI so we can access our configuration
         $CI =& get_instance();
         //return the full asset path
-        return $CI->config->item('asset_path');
+        return base_url() . $CI->config->item('asset_path');
     }
 }
 
@@ -72,7 +72,7 @@ if ( ! function_exists('css_url'))
     function css_url()
     {
         $CI =& get_instance();
-        return $CI->config->item('css_path');
+        return base_url() . $CI->config->item('css_path');
     }
 }
 
@@ -87,7 +87,7 @@ if ( ! function_exists('less_url'))
     function less_url()
     {
         $CI =& get_instance();
-        return $CI->config->item('less_path');
+        return base_url() . $CI->config->item('less_path');
     }
 }
 
@@ -102,7 +102,7 @@ if ( ! function_exists('js_url'))
     function js_url()
     {
         $CI =& get_instance();
-        return $CI->config->item('js_path');
+        return base_url() . $CI->config->item('js_path');
     }
 }
 
@@ -117,7 +117,7 @@ if ( ! function_exists('img_url'))
     function img_url()
     {
         $CI =& get_instance();
-        return $CI->config->item('img_path');
+        return base_url() . $CI->config->item('img_path');
     }
 }
 
@@ -132,7 +132,7 @@ if ( ! function_exists('swf_url'))
     function swf_url()
     {
         $CI =& get_instance();
-        return $CI->config->item('swf_path');
+        return base_url() . $CI->config->item('swf_path');
     }
 }
 
@@ -147,7 +147,7 @@ if ( ! function_exists('upload_url'))
     function upload_url()
     {
         $CI =& get_instance();
-        return $CI->config->item('upload_path');
+        return base_url() . $CI->config->item('upload_path');
     }
 }
 
@@ -162,7 +162,7 @@ if ( ! function_exists('download_url'))
     function download_url()
     {
         $CI =& get_instance();
-        return $CI->config->item('download_path');
+        return base_url() . $CI->config->item('download_path');
     }
 }
 
@@ -177,7 +177,7 @@ if ( ! function_exists('xml_url'))
     function xml_url()
     {
         $CI =& get_instance();
-        return $CI->config->item('xml_path');
+        return base_url() . $CI->config->item('xml_path');
     }
 }
 
