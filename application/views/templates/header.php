@@ -1,12 +1,47 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+	defined('BASEPATH') OR exit('No direct script access allowed');
+	function writeTagsInArray($array = array()){
+		foreach($array as $cell){
+			echo '		' . $cell . PHP_EOL;
+		}
+	}
 ?>
 <!DOCTYPE html>
-<html lang = "en">
+<html lang = "<?php echo $header['lang'] ?? 'en'?>">
 	<head>
-		<meta charset = "utf-8">
-		<title>CodeIgniter View Example</title>
-		<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/style.css">
-		<script type = 'text/javascript' src = "<?php echo base_url(); ?>js/sample.js"></script>
+		<title><?php echo $header['title'] ?? 'codeIgniter ' . CI_VERSION . ' project' ?></title>
+		<meta charset = "<?php echo $header['charset'] ?? 'utf-8' ?>">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- "To ensure proper rendering and touch zooming" -Bootstrap CSS introduction page found in there: http://getbootstrap.com/css/ -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<?php
+
+	//BLOCK META
+	//This block's only purpose is to create the meta tags with the DCTERMS
+	if (!empty($dcterms)){
+		echo '		<meta name="DCTERMS.creator" content="' . $dcterms['creator'] . '" />' . PHP_EOL;
+		echo '		<meta name="DCTERMS.subject" content="' . $dcterms['subject'] . '" />' . PHP_EOL;
+		echo '		<meta name="DCTERMS.created" content="' . $dcterms['created'] . '" />' . PHP_EOL;
+	}
+	
+	//BLOCK ASSETS
+	//for each 'if' statement, we check if we'll add an asset or not
+	
+	//css asset loader
+	if (!empty($cssTags)){
+		echo '		' . '<!-- CSS tags here -->' . PHP_EOL;
+		writeTagsInArray($cssTags);
+	}
+	//js asset loader
+	if (!empty($scriptsTags)){
+		echo '		' . '<!-- Scripts tags here -->' . PHP_EOL;
+		writeTagsInArray($scriptsTags);
+	}
+	//less asset loader
+	if (!empty($lessTags)){
+		echo '		' . '<!-- LESS tags here -->' . PHP_EOL;
+		writeTagsInArray($lessTags);
+	}
+?>
 	</head>
 	<body>

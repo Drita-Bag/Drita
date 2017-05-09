@@ -57,7 +57,7 @@ if ( ! function_exists('asset_url'))
         //get an instance of CI so we can access our configuration
         $CI =& get_instance();
         //return the full asset path
-        return base_url() . $CI->config->item('asset_path');
+        return $CI->config->item('asset_path');
     }
 }
 
@@ -72,7 +72,7 @@ if ( ! function_exists('css_url'))
     function css_url()
     {
         $CI =& get_instance();
-        return base_url() . $CI->config->item('css_path');
+        return $CI->config->item('css_path');
     }
 }
 
@@ -87,7 +87,7 @@ if ( ! function_exists('less_url'))
     function less_url()
     {
         $CI =& get_instance();
-        return base_url() . $CI->config->item('less_path');
+        return $CI->config->item('less_path');
     }
 }
 
@@ -102,7 +102,7 @@ if ( ! function_exists('js_url'))
     function js_url()
     {
         $CI =& get_instance();
-        return base_url() . $CI->config->item('js_path');
+        return $CI->config->item('js_path');
     }
 }
 
@@ -117,7 +117,7 @@ if ( ! function_exists('img_url'))
     function img_url()
     {
         $CI =& get_instance();
-        return base_url() . $CI->config->item('img_path');
+        return $CI->config->item('img_path');
     }
 }
 
@@ -132,7 +132,7 @@ if ( ! function_exists('swf_url'))
     function swf_url()
     {
         $CI =& get_instance();
-        return base_url() . $CI->config->item('swf_path');
+        return $CI->config->item('swf_path');
     }
 }
 
@@ -147,7 +147,7 @@ if ( ! function_exists('upload_url'))
     function upload_url()
     {
         $CI =& get_instance();
-        return base_url() . $CI->config->item('upload_path');
+        return $CI->config->item('upload_path');
     }
 }
 
@@ -162,7 +162,7 @@ if ( ! function_exists('download_url'))
     function download_url()
     {
         $CI =& get_instance();
-        return base_url() . $CI->config->item('download_path');
+        return $CI->config->item('download_path');
     }
 }
 
@@ -177,7 +177,7 @@ if ( ! function_exists('xml_url'))
     function xml_url()
     {
         $CI =& get_instance();
-        return base_url() . $CI->config->item('xml_path');
+        return $CI->config->item('xml_path');
     }
 }
 
@@ -370,7 +370,7 @@ if ( ! function_exists('css'))
 {
     function css($file, $media='all')
     {
-        return '<link rel="stylesheet" type="text/css" href="' . css_url() . $file . '" media="' . $media . '">'."\n";
+        return '<link rel="stylesheet" type="text/css" href="' . css_url() . $file . '" media="' . $media . '">';
     }
 }
 
@@ -385,7 +385,7 @@ if ( ! function_exists('less'))
 {
     function less($file)
     {
-        return '<link rel="stylesheet/less" type="text/css" href="' . less_url() . $file . '">'."\n";
+        return '<link rel="stylesheet/less" type="text/css" href="' . less_url() . $file . '">';
     }
 }
 
@@ -405,7 +405,7 @@ if ( ! function_exists('js'))
 
 		foreach ( $atts as $key => $val )
 			$element .= ' ' . $key . '="' . $val . '"';
-		$element .= '></script>'."\n";
+		$element .= '></script>';
 
 		return $element;
     }
@@ -443,8 +443,8 @@ if ( ! function_exists('jquery'))
     function jquery($version='')
     {
     	// Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
-  		$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>'."\n";
-  		$out .= '<script>window.jQuery || document.write(\'<script src="'.js_url().'jquery-'.$version.'.min.js"><\/script>\')</script>'."\n";
+  		$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>' . PHP_EOL;
+  		$out .= '<script>window.jQuery || document.write(\'<script src="'.js_url().'jquery-'.$version.'.min.js"><\/script>\')</script>';
         return $out;
     }
 }
