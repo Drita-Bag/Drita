@@ -33,9 +33,9 @@
 		writeTagsInArray($cssTags);
 	}
 	//js asset loader
-	if (!empty($scriptsTags)){
-		echo '		' . '<!-- Scripts tags here -->' . PHP_EOL;
-		writeTagsInArray($scriptsTags);
+	if (!empty($jsTags)){
+		echo '		' . '<!-- JS tags here -->' . PHP_EOL;
+		writeTagsInArray($jsTags);
 	}
 	//less asset loader
 	if (!empty($lessTags)){
