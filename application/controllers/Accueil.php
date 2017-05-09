@@ -21,4 +21,5 @@ class Accueil extends CI_Controller {
 		
 		$this->load->view('templates/header', $data);
 	}
+	
 }
