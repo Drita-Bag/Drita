@@ -3,10 +3,12 @@
 	
       public function index() { 
 		 
-		 $this->load->helper('url'); 
-		 $this->load->view('templates/header');
-         $this->load->view('musique');
-		 $this->load->view('templates/footer');
+                $data['titre'] = 'Musique';
+                
+		$this->load->helper('url'); 
+		$this->load->view('templates/header', $data);
+                $this->load->view('musique', $data);
+		$this->load->view('templates/footer');
 	  } 
    } 
 ?>

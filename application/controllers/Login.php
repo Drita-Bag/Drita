@@ -3,10 +3,12 @@
 	
       public function index() { 
 		 
-		 $this->load->helper('url'); 
-		 $this->load->view('templates/header');
-         $this->load->view('login');
-		 $this->load->view('templates/footer');
+                $data['titre'] = 'Connexion';
+                
+                $this->load->helper('url'); 
+		$this->load->view('templates/header', $data);
+                $this->load->view('login', $data);
+                $this->load->view('templates/footer');
 	  } 
    } 
 ?>

@@ -1,12 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Gestionnaire Drita</title>
-
-
+?>
 <style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -75,10 +69,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div id="body">
 		
 		<p>Le gestionnaire de musique ce trouve ici :</p>
-		<code><a href='index.php/musique'>Musique</a></code>
+		<code><a href='musique'>Musique</a></code>
 
 		<p>Gestionnaire de LED</p>
-		<code><a href= 'index.php/LED'>LED</a></code>
+		<code><a href= 'LED'>LED</a></code>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
