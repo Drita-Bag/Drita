@@ -1,36 +1,20 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Accueil extends CI_Controller {
-        
-        public function __construct() {
+    
+        public function __construct() 
+        {
             parent::__construct();
             $this->load->model('Login_model');
             $this->load->helper('url_helper');
         }
-        
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
     
 	public function index()
 	{
-                $data['titre'] = 'Accueil';
                 if($this->Login_model->IsConnected())
                 {
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('accueil', $data);
+                    $this->loadHeader();
+                    $this->load->view('accueil');
                     $this->load->view('templates/footer');
                 }
                 else
@@ -38,5 +22,16 @@ class Accueil extends CI_Controller {
                     header('location:login');
                 }
 		
+	}
+	
+	private function loadHeader()
+	{
+		$data['header'] = init_header('fr', 'Accueil Drita', 'utf-8');
+		$data['dcterms'] = header_dcterms('DritaTeam', 'DritaHomePage', '2017-05-09');
+		$data['cssTags'] = array(css('style.css'), css('accueil_style.css'));
+		$data['jsTags'] = array();
+		$data['lessTags'] = array();		
+		
+		$this->load->view('templates/header', $data);
 	}
 }

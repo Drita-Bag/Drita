@@ -7,7 +7,27 @@ class Login_model extends CI_Model {
     }
 
     public function IsConnected() {
-        return false;
+            if(isset($_COOKIE['VoCoreConnect']))
+            {
+                $reponse = TRUE;
+            }
+            else
+            {
+                $reponse = FALSE;
+            }
+            return $reponse;
+        }
+    public function user_validity(){
+        if(empty($_POST['UserName']) || empty($_POST['Password']))
+        {
+            $reponse = FALSE;
+        }
+        else
+        {
+            
+        }
+        
+        
     }
 
 }
