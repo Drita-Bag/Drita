@@ -32,15 +32,25 @@
         }
     </style>
     <div>
-        <form id="recherche" method="post">
-            <input name="saisie" type="text" placeholder="Recherche..." required />
-            <input class="loupe" type="submit" value="" />
+        <form id="recherche" method="post" action="#">
+            <p>
+                <input name="saisie" type="text" placeholder="Recherche..." required />
+                <input class="loupe" type="submit" value="" />
+            </p>
         </form>
-        <?php
-            echo $test;
-        ?>
+        <form methode="post" action="..">
             
-            
+            <?php
+                foreach($Songs as $Song)
+                {
+            ?>
+            <p>
+                <input name=v_"<?php echo $Song ?>" type="submit" value="<?php echo $Song?>"/>
+            </p>
+            <?php
+                }
+            ?>
+        </form>
     </div>
 </body>
 		

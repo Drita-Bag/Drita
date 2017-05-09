@@ -3,15 +3,20 @@
     {
         function lecture()
         {
-            $dir='G:\music';
+            $Return ='';
+            $dir='F:\music';
             if ($dh = opendir($dir))
             {
                 while (($file = readdir($dh)) !== false)
                 {
-                    echo $file.PHP_EOL;
+                    $info = new SplFileInfo($file);
+                    if($info->getExtension()=='mp3')
+                    {
+                        $Return[$file]=$file;
+                    }
                 }
                 closedir($dh);
+                return $Return;
             }
-            return 'plop';
         }
     }
