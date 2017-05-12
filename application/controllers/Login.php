@@ -9,8 +9,19 @@
         }
        
         public function index() { 
-		 
-                if(!$this->Login_model->user_validity())
+            
+            if(isset($_POST['UserName']) && isset($_POST['Passowrd']))
+            { 
+                $User=$_POST['UserName'];
+                $Password = $_POST['Password'];
+            }
+            else
+            {
+                $User = "admin";
+                $Password = "password";
+            }
+                        
+                if(!$this->Login_model->user_validity($User, $Password))
                 {
                     $this->loadHeader();
                     $this->load->view('login');
@@ -34,4 +45,3 @@
 		$this->load->view('templates/header', $data);
 	}
    } 
-?>

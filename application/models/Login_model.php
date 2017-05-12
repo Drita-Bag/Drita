@@ -17,58 +17,55 @@ class Login_model extends CI_Model {
             }
             return $reponse;
         }
-    public function user_validity(){
+    public function SettingCookie($User, $Password)
+    {
+        if($User == TRUE && $Password == TRUE)
+            {
+                $reponse = TRUE;
+                setcookie("VoCoreConnect", "VoCoreConnect", (time()+365*24*3600));  
+            }                
+            else
+            {
+                $reponse = false;
+            }
+        return $reponse;
+    }
+
+    public function handle($User, $Password)
+    {
+        $handle=fopen('C:/wamp/www/Drita-Bag/application/GetLog.txt', 'r');
+        $compteur=0;
+        $UserCheck = FALSE;
+        $PassCheck = FALSE;
+        if($handle){
+            while(($line=fgets($handle)) !== false)
+            {
+                if($User == $line && $compteur = 0)
+                {
+                    $UserCheck = TRUE;
+                }
+                else if($Password === $line && $compteur = 1)
+                {
+                    $PassCheck = TRUE;
+                }
+            }
+            fclose($handle);
+            $reponse = SettingCookie($UserCheck, $PassCheck);
+        }
+    return $reponse;
+    }
+    public function user_validity($User, $Password){
         
-        if(empty($_POST['UserName']) || empty($_POST['Password']))
-        {
+        if(empty($User) || empty($Password)){
+            
             $reponse = FALSE;
         }
         else
         {
-            $handle=fopen('C:/wamp/www/Drita-Bag/application/GetLog.txt', 'r');
-            $compteur=0;
-            $UserCheck = FALSE;
-            $PassCheck = FALSE;
-            if($handle){
-                while(($line=fgets($handle)) !== false)
-                {
-                    if($_POST['UserName'] == $line && $compteur = 0)
-                    {
-                        $UserCheck = TRUE;
-                    }
-                    else if($_POST['Password'] == $line && $compteur = 1)
-                    {
-                        $PassCheck = TRUE;
-                    }
-                }
-                
-                if($UserCheck == TRUE && $PassCheck == TRUE)
-                {
-                    $reponse = TRUE;
-                    if(isset($_POST['RememberMe']))
-                    {
-                        if($_POST['RememberMe'] = "true")
-                        {
-                            setcookie("VoCoreConnect", "VoCoreConnect", (time()+365*24*3600));
-                        }
-                        else
-                        {
-                            setcookie("VoCoreConnect","VoCoreConnect", (time()+20));
-                        }
-                    }
-                }
-                else
-                {
-                    $reponse = false;
-                }
-            }
-            fclose($handle);
-            
-            
+            var_dump($User);
+            var_dump($Password);
+            $reponse = handle($User, $Password);
         }
-        
         return $reponse;
-        
     }
-
 }

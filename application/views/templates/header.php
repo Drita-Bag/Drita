@@ -8,7 +8,7 @@
 ?>
 <!DOCTYPE html>
 <html lang = "<?php echo $header['lang'] ?? 'en'?>">
-	<head>
+    <head>
 		<title><?php echo $header['title'] ?? 'codeIgniter ' . CI_VERSION . ' project' ?></title>
 		<meta charset = "<?php echo $header['charset'] ?? 'utf-8' ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
