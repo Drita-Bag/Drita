@@ -43,7 +43,8 @@ class login extends CI_Controller
                          //set the session variables
                          $sessiondata = array(
                               'username' => $username,
-                              'loginuser' => TRUE
+                              'loginuser' => TRUE,
+                             'logged_in' => TRUE
                          );
                          $this->session->set_userdata($sessiondata);
                          redirect("accueil");

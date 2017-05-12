@@ -11,10 +11,17 @@ class Accueil extends CI_Controller {
     
 	public function index()
 	{
-                
+                if($this->session->has_userdata('logged_in'))
+                {
                     $this->loadHeader();
                     $this->load->view('accueil');
                     $this->load->view('templates/footer');
+                }
+                else
+                {
+                    redirect('login');
+                }
+
 	}
 	
 	private function loadHeader()
