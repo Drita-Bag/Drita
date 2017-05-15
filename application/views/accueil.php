@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div id="body">
 		
-		<p>Le gestionnaire de musique ce trouve ici :</p>
+		<p>Le gestionnaire de musique se trouve ici :</p>
 		<code><a href='musique'>Musique</a></code>
 
 		<p>Gestionnaire de LED</p>

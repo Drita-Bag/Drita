@@ -44,7 +44,7 @@ class login extends CI_Controller
                          $sessiondata = array(
                               'username' => $username,
                               'loginuser' => TRUE,
-                             'logged_in' => TRUE
+                              'logged_in' => TRUE
                          );
                          $this->session->set_userdata($sessiondata);
                          redirect("accueil");
@@ -52,13 +52,13 @@ class login extends CI_Controller
                     else
                     {
                          $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
-                         redirect('login/index');
+                         redirect('login');
                     }
                }
                else
                {
-                    redirect('login/index');
+                    redirect('login');
                }
           }
      }
-}?>
+}

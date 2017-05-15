@@ -29,7 +29,7 @@ class Accueil extends CI_Controller {
 		$data['header'] = init_header('fr', 'Accueil Drita', 'utf-8');
 		$data['dcterms'] = header_dcterms('DritaTeam', 'DritaHomePage', '2017-05-09');
 		$data['cssTags'] = array(css('style.css'), css('accueil_style.css'));
-		$data['jsTags'] = array();
+		$data['jsTags'] = array(js('bootstrap.min.js'), js('jquery.min.js'), js('script.js'),  js('sample.js'));
 		$data['lessTags'] = array();		
 		
 		$this->load->view('templates/header', $data);
