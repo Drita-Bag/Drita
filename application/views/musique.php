@@ -1,5 +1,16 @@
 <body> 
-    <p><a href='http://localhost/drita-bag/drita-bag'>Accueil</a> -> Musique</p>
+    <p><a href='http://localhost/drita-bag'>Accueil</a> -> Musique</p>
+    
+    <?php
+        if(isset($_POST['Song']))
+        {
+            //http://www.commentcamarche.net/forum/affich-17548767-ligne-de-comande-windows-media-player
+            
+            $fullpath = "\"C:\Program Files\Windows Media Player\wmplayer.exe\" /play G:\music\\" . $_POST['Song'];
+            var_dump($fullpath);
+            exec($fullpath);
+        }
+    ?>
     <style>	  
         #recherche {
         width:208px;
@@ -32,20 +43,20 @@
         }
     </style>
     <div>
-        <form id="recherche" method="post" action="#">
+        <form id="recherche" method="post" action="..">
             <p>
                 <input name="saisie" type="text" placeholder="Recherche..." required />
                 <input class="loupe" type="submit" value="" />
             </p>
         </form>
-        <form methode="post" action="..">
+        <form method="post" action="musique">
             
             <?php
                 foreach($Songs as $Song)
                 {
             ?>
             <p>
-                <input name=v_"<?php echo $Song ?>" type="submit" value="<?php echo $Song?>"/>
+                <input name="Song" type="submit" value="<?php echo $Song?>"/>
             </p>
             <?php
                 }
