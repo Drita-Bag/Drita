@@ -9,8 +9,6 @@
             $this->load->view('templates/header');
             $this->load->view('musique',$data);
             var_dump($data);
-            
-            
             $this->load->view('templates/footer');
 	 } 
    } 

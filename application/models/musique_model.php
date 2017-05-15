@@ -4,7 +4,7 @@
         function lecture()
         {
             $Return ='';
-            $dir='F:\music';
+            $dir='G:\music';
             if ($dh = opendir($dir))
             {
                 while (($file = readdir($dh)) !== false)
