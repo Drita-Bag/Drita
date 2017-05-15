@@ -15,4 +15,4 @@ class login_model extends CI_Model
           $query = $this->db->query($sql);
           return $query->num_rows();
      }
-}?>
+}

@@ -21,7 +21,7 @@ class login extends CI_Controller
           //get the posted values
           $username = $this->input->post("txt_username");
           $password = $this->input->post("txt_password");
-
+          
           //set validations
           $this->form_validation->set_rules("txt_username", "Username", "trim|required");
           $this->form_validation->set_rules("txt_password", "Password", "trim|required");

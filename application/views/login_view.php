@@ -28,8 +28,8 @@
      <div class="row">
           <div class="col-lg-4 col-sm-4 well">
           <?php 
-          $attributes = array("class" => "form-horizontal", "id" => "loginform", "name" => "loginform");
-          echo form_open("login/index", $attributes);?>
+          $attributes = array("class" => "form-horizontal", "id" => "loginform", "name" => "loginform"); //Permet de générer le formulaire, et de l'insérer dans une variable
+          echo form_open("login/index", $attributes); //ouvre le formulaire?> 
           <fieldset>
                <legend>Login</legend>
                <div class="form-group">
@@ -63,8 +63,10 @@
                </div>
                </div>
           </fieldset>
-          <?php echo form_close(); ?>
-          <?php echo $this->session->flashdata('msg'); ?>
+          <?php echo form_close(); //ferme le formulaire?>
+          <?php echo $this->session->flashdata('msg'); //Si il y a eu une erreur lors du login, ce message apparaîtra.
+          // Il est initalisé si il y a une erreur de mot de pass ou de nom de login dans le controller.
+          //flashdata permet de récupérer le contenu du variable qui ne vie que durant une seul et unique requête.?>
           </div>
      </div>
 </div>
