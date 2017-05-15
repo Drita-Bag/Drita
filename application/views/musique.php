@@ -3,11 +3,14 @@
     
     <?php
         if(isset($_POST['Song']))
-        {
-            //http://www.commentcamarche.net/forum/affich-17548767-ligne-de-comande-windows-media-player
-            
-            $fullpath = "\"C:\Program Files\Windows Media Player\wmplayer.exe\" /play G:\music\\" . $_POST['Song'];
+        {   
+            $fullpath = "\"C:\Program Files\Windows Media Player\wmplayer.exe\" /open /close G:\music\\" . $_POST['Song'];
             var_dump($fullpath);
+            exec($fullpath);
+        }
+        else if(isset($_POST['Stop']))
+        {
+            $fullpath = "taskkill /f /im wmplayer.exe";
             exec($fullpath);
         }
     ?>
@@ -54,11 +57,21 @@
             <?php
                 foreach($Songs as $Song)
                 {
-            ?>
-            <p>
-                <input name="Song" type="submit" value="<?php echo $Song?>"/>
-            </p>
-            <?php
+                    if(isset($_POST['Song']))
+                    {
+                        if($_POST['Song'] == $Song)
+                        {
+                            echo '<input name="Stop" type="submit" value="Stop ' . $Song . '" /></br>';
+                        }
+                        else                 
+                        {
+                            echo '<input name="Song" type="submit" value="'. $Song .'"/></br>';
+                        }
+                    }
+                    else               
+                    {
+                        echo '<input name="Song" type="submit" value="'. $Song .'"/></br>';
+                    }
                 }
             ?>
         </form>
