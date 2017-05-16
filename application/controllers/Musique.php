@@ -19,5 +19,4 @@
             $this->load->view('musique',$data);
             $this->load->view('templates/footer');
 	 } 
-   } 
-?>  
+   }

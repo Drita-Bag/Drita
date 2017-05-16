@@ -3,20 +3,24 @@
     {
         function lecture()
         {
-            $Return ='';
-            $dir='G:\music';
-            if ($dh = opendir($dir))
-            {
-                while (($file = readdir($dh)) !== false)
+                $Return ='';
+                $dir='G:\music';
+                if ($dh = opendir($dir)!==false)
                 {
-                    $info = new SplFileInfo($file);
-                    if($info->getExtension()=='mp3')
+                    while (($file = readdir($dh)) !== false)
                     {
-                        $Return[$file]=$file;
+                        $info = new SplFileInfo($file);
+                        if($info->getExtension()=='mp3')
+                        {
+                            $Return[$file]=$file;
+                        }
                     }
+                    closedir($dh);
                 }
-                closedir($dh);
-                return $Return;
-            }
+                else
+                {
+                   $Return=false;
+                }
+            return $Return;
         }
     }

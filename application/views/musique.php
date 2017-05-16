@@ -55,6 +55,13 @@
         <form method="post" action="musique">
             
             <?php
+            
+            if($Songs === FALSE)
+            {
+                redirect('erreur');
+            }
+            else
+            {
                 foreach($Songs as $Song)
                 {
                     if(isset($_POST['Song']))
@@ -73,6 +80,8 @@
                         echo '<input name="Song" type="submit" value="'. $Song .'"/></br>';
                     }
                 }
+            }
+                
             ?>
         </form>
     </div>
