@@ -5,8 +5,9 @@
         {
                 $Return ='';
                 $dir='G:\music';
-                if ($dh = opendir($dir)!==false)
+                if ($dh = opendir($dir) !== false)
                 {
+                    $dh = opendir($dir);
                     while (($file = readdir($dh)) !== false)
                     {
                         $info = new SplFileInfo($file);
