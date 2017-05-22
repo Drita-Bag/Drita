@@ -3,12 +3,13 @@
 	
        public function index() { 
 		 
-                    $this->loadHeader();
+                    //$this->loadHeader();
+                    $this->load->view('templates/header');
                     $this->load->view('led');
                     $this->load->view('templates/footer');
 	  } 
           
-        private function loadHeader()
+        /*private function loadHeader()
 	{
 		$data['header'] = init_header('fr', 'Gestionnaire led', 'utf-8');
 		$data['dcterms'] = header_dcterms('DritaTeam', 'DritaLedPage', '2017-05-09');
@@ -16,5 +17,5 @@
 		$data['jsTags'] = array(js('bootstrap.min.js'), js('jquery.min.js'), js('script.js'),  js('sample.js')); // Ajouter chaque js que vous souhaitez appliquer sur la page
 		$data['lessTags'] = array();		
 		$this->load->view('templates/header', $data);
-	}
+	}*/
    } 

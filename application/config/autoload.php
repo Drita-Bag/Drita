@@ -84,7 +84,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'asset', 'headerInformations');
+$autoload['helper'] = array();
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files
@@ -97,7 +97,7 @@ $autoload['helper'] = array('url', 'asset', 'headerInformations');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('asset');
+$autoload['config'] = array();
 /*
 | -------------------------------------------------------------------
 |  Auto-load Language files

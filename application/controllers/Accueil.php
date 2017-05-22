@@ -13,7 +13,7 @@ class Accueil extends CI_Controller {
 	{
                 if($this->session->has_userdata('logged_in'))//"logged_in" est initalisée dans le controller "login.php". Si la variable de session n'existe pas, celà siginifie que la personne n'est pas connectée.
                 {
-                    $this->loadHeader();
+                    $this->load->view('templates/header');
                     $this->load->view('accueil');
                     $this->load->view('templates/footer');
                 }
@@ -24,7 +24,7 @@ class Accueil extends CI_Controller {
 
 	}
 	
-	private function loadHeader()
+	/*private function loadHeader()
 	{
 		$data['header'] = init_header('fr', 'Accueil Drita', 'utf-8');
 		$data['dcterms'] = header_dcterms('DritaTeam', 'DritaHomePage', '2017-05-09');
@@ -33,5 +33,5 @@ class Accueil extends CI_Controller {
 		$data['lessTags'] = array();		
 		
 		$this->load->view('templates/header', $data);
-	}
+	}*/
 }
